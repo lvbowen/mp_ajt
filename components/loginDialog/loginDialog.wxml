@@ -1,0 +1,9 @@
+<view class="login-wrap" hidden='{{!isShow}}'>
+    <view class="login-mask" catchtap='hideDialog'></view>
+    <view class="login-box">
+        <view class="login-title">登录或注册爱聚微招聘</view>
+        <view class="login-wechat login-btn-box"><button type="primary" class="btn-wechat" open-type='getPhoneNumber' catchgetphonenumber="_getPhoneNumber"><image class="img" src="/images/icon_white_wechat.png"></image>微信账号快速登录</button></view>
+        <view class="login-phone login-btn-box"><button type="default" class="btn-phone" catchtap='_linkTo' data-logintype='phone'><image class="img" src="/images/icon-phone.png"></image>手机号注册/登录</button></view>
+        <view class="login-other" catchtap='_linkTo' data-logintype='other'>其他方式登录</view>
+    </view>
+</view>

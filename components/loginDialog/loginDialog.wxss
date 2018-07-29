@@ -1,0 +1,59 @@
+.login-mask{
+  position: fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  z-index: 999;
+  background-color: rgba(0,0,0,0.4);
+}
+.login-box{
+  position: fixed;
+  top:50%;
+  left:50%;
+  z-index: 1000;
+  width:560rpx;
+  height: 475rpx;
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color: #fff;
+  border-radius: 8rpx;
+}
+.login-box .login-title{
+    margin-top:50rpx;
+    margin-bottom: 26rpx;
+    line-height:50rpx;
+    font-size:36rpx;
+    text-align: center; 
+}
+.login-box .login-btn-box{
+  width:484rpx;
+  margin:0 auto 30rpx;
+}
+.login-box .login-btn-box button{
+  font-size:36rpx;
+  position: relative;
+}
+.login-box .login-btn-box .img{
+   position: absolute;
+   top:50%;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+}
+.login-box .login-wechat .img{
+  width:40rpx;
+  height: 33rpx;
+  left:34rpx;
+}
+.login-box .login-phone .img{
+  width:24rpx;
+  height: 36rpx;
+  left:45rpx;
+}
+.login-box .login-other{
+  line-height: 100rpx;
+  border-top:1rpx solid #e5e5e5;
+  color: #999;
+  font-size:36rpx;
+  text-align: center;
+}

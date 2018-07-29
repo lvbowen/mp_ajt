@@ -1,0 +1,7 @@
+
+<view class="header {{color}} {{system}} {{position == 'fixed'? 'header-fixed' : ''}}">
+  <view class="header-content">
+      <text class="arrow-left" bindtap='_back' wx:if="{{showBack == '1'}}" ></text>
+      <text class="title">{{title}}</text>
+  </view>
+</view>

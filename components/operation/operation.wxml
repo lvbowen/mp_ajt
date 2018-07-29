@@ -1,0 +1,11 @@
+<view class='operation' wx-if="{{open}}">
+  <view class='operation_hd'>操作</view>
+  <view class='operation_bd {{operationArr.length == 4 ? "micro-operation_bd" : ""}}'>
+      <view class='tag_btn' bindtap="_onTap" wx:for="{{operationArr}}" wx:key="{{type}}" data-type="{{item.type}}" data-val="{{item.text}}">
+        <image src='{{item.src}}'></image>
+        <text>{{item.text}}</text>
+      </view>
+  </view>
+  <view class='operation_ft border_top' catchtap="_closed">取消</view>
+</view>
+<view class='operation_bg' wx-if="{{open}}" catchtap="_closed"></view>

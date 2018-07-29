@@ -1,0 +1,60 @@
+/* components/header/header.wxss */
+
+.header{
+  width:750rpx;
+  height: 40px;
+  padding-top:24px;
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: 999; 
+  background: transparent;
+}
+/* .header.Android{
+  height: 44px;
+} */
+.header.header-fixed{
+  position: fixed;
+  background: #ffffff;
+}
+.header .header-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  position: relative;
+  background: transparent;
+}
+/* .header.Android .header-content{
+  height: 44px;
+} */
+.header .header-content .title{
+   color: #000;
+   font-size: 18px;
+}
+.header.white .header-content .title{
+     color: #fff;
+}
+.header .arrow-left{
+   position: absolute;
+   left:40rpx;
+   top:14px;
+   border-left: 2px solid;
+   border-bottom: 2px solid;
+   width: 10px; 
+   height: 10px;
+   transform: rotate(45deg);
+}
+.header.white .arrow-left{
+  border-color: #fff;
+}
+.header .arrow-left::before{
+  content:'';
+  display: inline-block;
+  width:60px;
+  height: 40px;
+  position: relative;
+  top:-10px;
+  left:-25px;
+  transform: rotate(-45deg);
+}
