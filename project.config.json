@@ -1,0 +1,89 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.9.91",
+	"appid": "wxcb2d86acf3a55170",
+	"projectname": "%E7%88%B1%E8%81%9A%E9%80%9A",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "我的",
+					"pathName": "pages/mine/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提现",
+					"pathName": "pages/mine/cash/cash",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": 2,
+					"name": "分享名片",
+					"pathName": "pages/card/shareCard/shareCard",
+					"query": "cardId=149&fansId=33",
+					"scene": "1012"
+				},
+				{
+					"id": -1,
+					"name": "裁剪图片",
+					"pathName": "pages/upload/upload",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": 4,
+					"name": "vip广告页",
+					"pathName": "pages/mine/vipMember/vipMember",
+					"query": "fromShare=true"
+				},
+				{
+					"id": -1,
+					"name": "访客记录",
+					"pathName": "pages/mine/visitorRecord/visitorRecord",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "名片首页",
+					"pathName": "pages/card/index/index",
+					"query": "fansId=10&cardId=104"
+				},
+				{
+					"id": -1,
+					"name": "提现记录",
+					"pathName": "pages/mine/cashRecord/cashRecord",
+					"query": ""
+				}
+			]
+		}
+	}
+}

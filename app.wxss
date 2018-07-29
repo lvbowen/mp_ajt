@@ -1,0 +1,236 @@
+/**app.wxss**/
+@import "style/weui.wxss";
+@import "style/font-awesome.wxss";
+
+.container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 200rpx 0;
+    box-sizing: border-box;
+}
+
+page {
+    width: 750rpx;
+    overflow-x: hidden;
+    height: 100%;
+    background: #f8f8fc;
+}
+
+.ell {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.input-placeholder, .textarea-placeholder, .placeholder {
+    color: #999;
+}
+
+.remove-button-default-style {
+    padding: 0;
+    margin: 0;
+    line-height: 1.5;
+    background: transparent;
+    text-align: left;
+    border-radius: 0;
+}
+
+.remove-button-default-style::after {
+    border: 0;
+}
+
+/* 文字 */
+
+.font-24 {
+    font-size: 24rpx;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.font-28 {
+    font-size: 28rpx;
+    word-break: break-all;
+    line-height: 1.4;
+}
+
+.font-32 {
+    font-size: 32rpx;
+    word-break: break-all;
+    line-height: 1.42;
+}
+
+.font-34 {
+    font-size: 34rpx;
+    word-break: break-all;
+    line-height: 1.42;
+}
+
+/* 颜色 */
+
+.color_ffffff {
+    color: #fff;
+}
+
+.color_5CB3FF {
+    color: #5cb3ff;
+}
+
+.color_46BE8A {
+    color: #46be8a;
+}
+
+.color_333333 {
+    color: #333;
+}
+
+.color_666666 {
+    color: #666;
+}
+
+.color_B2B2B2 {
+    color: #b2b2b2;
+}
+
+/* 按钮  */
+
+.btn-blue {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 622rpx;
+    height: 88rpx;
+    line-height: 1;
+    background-color: #5cb3ff !important;
+    font-size: 36rpx;
+    color: #fff;
+}
+
+.btn-disabled {
+    background: rgba(90, 162, 231, 1) !important;
+    opacity: 0.4;
+    color: #fff !important;
+}
+
+/* 右箭头 */
+
+.arrow-right {
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    border-width: 2px 2px 0 0;
+    border-color: #c8c8cd;
+    border-style: solid;
+    -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    margin-left: 10rpx;
+}
+
+/* css 十字形  */
+
+.icon-cross {
+    position: relative;
+    width: 36rpx;
+    height: 36rpx;
+    overflow: hidden;
+}
+
+.icon-cross::before {
+    content: "";
+    position: absolute;
+    top: 15rpx;
+    width: 100%;
+    height: 6rpx;
+    background-color: #5aa2e7;
+}
+
+.icon-cross::after {
+    content: "";
+    position: absolute;
+    left: 15rpx;
+    width: 6rpx;
+    height: 100%;
+    background-color: #5aa2e7;
+}
+
+/* 扩展可点击区域  */
+
+.extend-clickable-area {
+    position: relative;
+}
+
+.extend-clickable-area::before {
+    content: '';
+    position: absolute;
+    top: -10rpx;
+    bottom: -10rpx;
+    left: -10rpx;
+    right: -10rpx;
+}
+
+/* 边框 */
+
+.border_top, .border_bottom {
+    position: relative;
+}
+
+.border_top::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1rpx;
+    border-top: 1rpx solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+.border_bottom::after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1rpx;
+    border-top: 1rpx solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+/* 按钮  */
+
+.btn-w690 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 1;
+    background-color: #5aa2e7 !important;
+    font-size: 36rpx;
+}
+
+.img-bg {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 500rpx;
+    width: 750rpx;
+    background: url('https://aijuhr.com/images/xcx/ajt_card-banner.png') no-repeat center center;
+    background-size:  auto 100%;
+    z-index: 0;
+}
+view{
+    word-break:break-all;
+}

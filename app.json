@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/card/index/index",
+    "pages/card/myCard/myCard",
+    "pages/card/shareCard/shareCard",
+    "pages/micro/index/index",
+    "pages/micro/editBaseInfo/editBaseInfo",
+    "pages/micro/searchAddress/searchAddress",
+    "pages/micro/loginRegister/loginRegister",
+    "pages/mine/moneyRecord/moneyRecord",
+    "pages/mine/cashRecord/cashRecord",
+    "pages/micro/agreement/agreement",
+    "pages/mine/index/index",
+    "pages/mine/about/about",
+    "pages/mine/visitorRecord/visitorRecord",
+    "pages/mine/maker/maker",
+    "pages/mine/vipMember/vipMember",
+    "pages/mine/cash/cash",
+    "pages/mine/memberPrivileges/memberPrivileges",
+    "pages/mine/buy/buy",
+    "pages/home/newHome/newHome",
+    "pages/home/map/map",
+    "pages/upload/upload"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱聚通",
+    "navigationBarTextStyle":"black",
+    "navigationStyle": "custom"
+  },
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#5AA2E7",
+        "backgroundColor": "#ffffff",
+        "borderStyle": "black",
+        "list": [
+            {
+                "pagePath": "pages/card/index/index",
+                "text": "名片",
+                "iconPath": "/images/tabbar-card.png",
+                "selectedIconPath": "/images/selected-tabbar-card.png"
+            },
+            {
+                "pagePath": "pages/micro/index/index",
+                "text": "微官网",
+                "iconPath": "/images/tabbar-micro.png",  
+                "selectedIconPath": "/images/selected-tabbar-micro.png"
+            },
+            {
+                "pagePath": "pages/mine/index/index",
+                "text": "我的",
+                "iconPath": "/images/tabbar-mine.png",
+                "selectedIconPath": "/images/selected-tabbar-mine.png"
+            }
+        ]
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "connectSocket": 10000,
+        "uploadFile": 20000,
+        "downloadFile": 20000
+    }
+}
