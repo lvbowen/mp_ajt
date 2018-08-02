@@ -1,0 +1,27 @@
+
+<wxs src="../../../wxs/filter.wxs" module="filters" />
+<scroll-view class="scroll-view {{noData}}" scroll-y style="height: {{scrollHeight}}px;">
+  <header title="访客记录" showBack="1" color="white"></header>
+  <view class="banner-box">
+   <image class="img" src="https://aijuhr.com/images/xcx/ajt_banner-visitor.png" mode="widthFix"></image>
+ </view>
+ <view class="record-list">
+    <view class="record-item" wx:for="{{recordList}}" wx:key="index">
+    <view class="record-hd">
+      <image src="{{item.headImgUrl}}" mode="widthFix" wx:if="{{item.headImgUrl}}"></image> 
+      <image src="/images/default-portrait.jpg" mode="widthFix" wx:else></image>
+    </view>
+    <view class="record-bd">
+      <view class="top">
+        <text class="title font-28 color_333333">{{item.nickName || '未知'}}</text>
+      </view>
+      <view class="bottom font-28 color_B2B2B2">{{item.visitTime}}<text>{{filters.getCity(item.address)}}</text></view>
+    </view>
+  </view>
+ </view>
+ <view class="no-data" wx:if="{{noData}}"><image src="/images/no-result.png" mode='widthFix'></image>没有访客记录</view>
+  <!-- <view class="loading" hidden='{{!loading}}'>
+    <text class='fa fa-spinner fa-spin fa-3x fa-fw'></text>
+    <text>加载更多</text>
+  </view> -->
+</scroll-view>

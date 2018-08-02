@@ -1,0 +1,23 @@
+<wxs src="../../../wxs/filter.wxs" module="filters" />
+  <header title="提现记录" position="fixed" showBack="1" ></header>
+  <scroll-view class="scroll-view {{noData}}" scroll-y style="height: {{scrollHeight}}px;" >
+    <block wx:for="{{recordList}}" wx:key="index">
+      <view class="record-item">
+        <view class="record-hd">
+          <view class="time font-28 color_666666">{{item.createTime}} <text>提现</text></view>
+          <view class="money font-36 color_333333">￥{{item.applyMoney}}</view>
+        </view>
+        <view class="record-bd">
+          <view class="state font-28 {{item.status == 2 ? 'red' : ''}}">{{filters.applyStaus(item.status)}}</view>
+          <view class="btn-submit" catchtap='againApply' data-id="{{item.id}}" wx:if="{{item.status == 2}}">重新提交</view>
+        </view>
+      </view>
+    </block>
+    <view class="no-data" wx:if="{{noData}}">
+      <image src="/images/no-result.png" mode='widthFix'></image>没有提现记录
+    </view>
+    <!-- <view class="loading" hidden='{{!loading}}'>
+      <text class='fa fa-spinner fa-spin fa-3x fa-fw'></text>
+      <text>加载更多</text>
+    </view> -->
+  </scroll-view>

@@ -1,0 +1,12 @@
+<view class="tabbar-wrap">
+  <view class="tabbar-item border_right {{currentIndex == '0' ? 'active' : ''}}" data-idx="0"  catchtap='_switchTab'>
+    <image class="img" src="/images/selected-tabbar-card.png" mode='widthFix' wx:if="{{currentIndex == '0'}}"></image>
+    <image class="img" src="/images/tabbar-card.png" mode='widthFix' wx:else></image>
+    <text class="text">名片</text>
+  </view>
+  <view class="tabbar-item {{currentIndex == '1' ? 'active' : ''}}" data-idx="1"  catchtap='_switchTab'>
+    <image class="img" src="/images/selected-tabbar-micro.png" mode='widthFix' wx:if="{{currentIndex == '1'}}"></image>
+    <image class="img" src="/images/tabbar-micro.png" mode='widthFix' wx:else></image>
+    <text class="text">微官网</text>
+  </view>
+</view>

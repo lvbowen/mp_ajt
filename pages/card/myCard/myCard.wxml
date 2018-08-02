@@ -1,0 +1,57 @@
+<view class="page-wrap">
+    <scroll-view scroll-y style="height:{{wH}}px;">
+        <view class="img-bg"></view>
+        <header title="我的名片" showBack="1" color="white" bindbackEvent="onBackEvent"></header>
+        <view class="card-info">
+            <view class="user-card" catchtap='clickEdit'>
+                <view class="card-info-1">
+                    <view class="company-name">{{cardInfo.nickName || ''}}</view>
+                    <view class="user-nick {{cardInfo.position ? '' : 'no-info'}}">{{cardInfo.position || ''}}</view>
+                    <view class="user-job {{cardInfo.companyName ? '' : 'no-info'}}">{{cardInfo.companyName || '公司名称'}}</view>
+                    <view class="company-logo" wx:if="{{cardInfo.headImgUrl}}">
+                        <image src="{{cardInfo.headImgUrl}}" mode="aspectFill"></image>
+                    </view>
+                    <view class="icon-edit">
+                        <image class="img" mode="widthFix" src="/images/icon_blue_edit2.png"></image>
+                    </view>
+                </view>
+                <view class="card-info-2" wx:if="{{showCard2}}">
+                    <view wx:if="{{cardInfo.phone!=''}}" class="user-phone">{{cardInfo.phone || ''}}</view>
+                    <view wx:if="{{cardInfo.wechatNum!=''}}" class="user-wx">{{cardInfo.wechatNum || ''}}</view>
+                    <view wx:if="{{cardInfo.email!=''}}" class="user-email">{{cardInfo.email|| ''}}</view>
+                    <view wx:if="{{cardInfo.address!=''}}" class="user-addr">{{cardInfo.address || ''}}</view>
+                </view>
+            </view>
+            <view class="code-btns">
+                <view class="code-wrap" catchtap='previewQrcode'>
+                    <image class="img" src="{{cardInfo.qrcodeImgUrl}}"></image>
+                </view>
+                <view class="btns">
+                    <form class="btn-share btn-box" bindsubmit='toggleShareSheet' report-submit="true">
+                        <image class="img" src="/images/btn-share-bg.png" mode="widthFix"></image>
+                        <button class="remove-button-default-style text {{isIOS?'':'and-text'}}" form-type='submit'>分享</button>
+                    </form>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+    <!-- 生成海报  -->
+    <view class='show_img' bindtap="closeShowimg" wx:if='{{showImg}}'>
+        <view class='show_img_con'>
+            <image src='{{showImgurl}}' mode="widthFix"></image>
+        </view>
+        <view bindtap="saveImg" class='show_img_btn'>
+            <image src='https://aijuhr.com/images/xcx/dowload.png'></image>保存图片</view>
+    </view>
+    <!-- canvas 画图区  -->
+    <canvas style="width: 560px; height: 590px;" canvas-id="firstCanvas" class='firstCanvas'></canvas>
+</view>
+<operation open='{{open}}' bind:myevent="onMyEvent" operation-arr="{{operationArr}}"></operation>
+<!-- 分享操作菜单actionSheet  -->
+<view class='choose_con' wx:if="{{showShare}}" bindtap="toggleShareSheet" style="background:transparent;">
+    <view class='choose_con_btn'>
+        <button class='share_poster' bindtap="previewQrcode" data-target='friendCircle'>生成分享图到朋友圈</button>
+        <button class='share_pople' open-type="share">转发给好友或群友</button>
+        <button class='share_cancel'>取消</button>
+    </view>
+</view>

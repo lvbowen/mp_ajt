@@ -1,0 +1,39 @@
+<view class="login-register-page">
+  <header showBack='1' position="fixed" ></header>
+  <view class="lr-title">
+    <text class="title">{{formMode}}爱聚微招聘</text>
+    <text class="title-btn color_5CB3FF" catchtap='switchFormMode'>{{formMode === '注册'?'登录':'注册'}}</text>
+  </view>
+  <form class="form">
+   <!-- 验证码登录或注册 -->
+   <view hidden="{{loginMode !== 'vcode'}}">
+      <view class="section section-phone">
+        <view class="area-code">
+          <text class="code">+86</text>
+          <text class="fa fa-caret-down" ></text>
+        </view>
+        <input class="input-phone" name="phone" type='number' placeholder="请输入您的手机号" placeholder-class='placeholder' maxlength='11' value="{{phone}}" data-prop="phone" bindinput="operateInput" />
+      </view>
+      <view class="section section-code">
+        <input name="vcode" type='number' placeholder="请输入收到的验证码" placeholder-class='placeholder' maxlength='6' value='{{vcode}}' data-prop="vcode" bindinput="operateInput" />
+        <text class="get-code" catchtap='sendCheckCode' style="color:{{isCountdown?'#999':'#333'}};">{{verificationCode}}</text>
+      </view>
+    </view>
+    <!-- 密码登录 -->
+    <view hidden="{{loginMode !== 'pwd'}}">
+      <view class="section">
+        <input class="input-phone" type='number' name="phone2" placeholder="请输入已验证的手机号" placeholder-class='placeholder' maxlength='11' value="{{phone2}}" data-prop="phone2" bindinput="operateInput" />
+      </view>
+      <view class="section section-code">
+        <input name="password" type='password' placeholder="请输入密码" placeholder-class='placeholder' value="{{password}}" data-prop="password" bindinput="operateInput" />
+      </view>
+    </view>
+    <view class="btn-area">
+      <button class="btn {{btnDisabled?'btn-disabled':''}}" disabled='{{btnDisabled}}' catchtap='registerOrLogin'>{{formMode}}</button>
+      <!-- <button class="btn" catchtap='login' >登录</button> -->
+    </view>
+  </form>
+  <view class="agreement"><text>{{formMode}}</text>爱聚微招聘代表你已经同意<text catchtap='linkTo' style="color:#000;">《爱聚用户协议》</text></view>
+  <view class="login-mode color_5CB3FF" catchtap='switchLoginMode' wx:if="{{formMode == '登录'}}">{{loginMode == 'vcode'?'密码':'验证码'}}登录</view>
+</view>
+<view class="msg-box" hidden='{{!showApiMessage}}' style="background-color:{{apiMessage.code == 0 ? '#49CC93' : '#FF566B'}};">{{apiMessage.message}}</view>

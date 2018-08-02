@@ -1,0 +1,8 @@
+{
+    "usingComponents": {
+        "operation": "/components/operation/operation",
+        "header": "/components/header/header"
+    },
+    "navigationBarTextStyle": "white",
+    "disableScroll": true
+}

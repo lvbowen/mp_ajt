@@ -1,0 +1,8 @@
+<template name="sharePoster">
+  <view class='share_icon' bindtap="openChange">
+     <image src='/images/share_icon.png' wx:if="{{type!=3}}"></image> 
+  </view>
+  <canvas style="width: 750px; height: 1334px;" canvas-id="firstCanvas" class='firstCanvas' wx:if="{{type==1}}"></canvas>
+  <canvas style="width: 750px; height: 1334px;" canvas-id="secondCanvas" class='firstCanvas' wx:if="{{type==2}}"></canvas>
+  <canvas style="width: 750px; height: 1334px;" canvas-id="thirdCanvas" class='firstCanvas' wx:if="{{type==3}}"></canvas>
+</template>

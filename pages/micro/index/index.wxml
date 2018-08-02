@@ -1,0 +1,70 @@
+
+<view class="page-wrap">
+  <view class="bg-color"></view>
+  <view class="company-card" catchtap='clickEdit' >
+     <view class="company-name">{{companyInfo.companyName || '我的公司'}}</view>
+     <view class="company-address {{companyInfo.companyAddress ? '' : 'no-info'}}">{{companyInfo.companyAddress || ''}}</view>
+     <view class="industry-scale" wx:if="{{companyInfo.industryStr}}"><text>{{companyInfo.industryStr}}</text> ｜ <text>{{companyInfo.scaleStr}}</text></view>
+     <view class="industry-scale no-info" wx:else></view>
+     <view class="company-logo" wx:if="{{companyInfo.logoUrl}}"><image src="{{companyInfo.logoUrl}}" mode="aspectFill"></image></view>
+     <view class="company-logo" wx:else><image src="/images/default-logo2.png"></image></view>
+     <view class="icon-edit" wx:if="{{showEditIcon}}"><image class="img" mode="widthFix" src="/images/icon_blue_edit2.png"></image></view>
+  </view>
+  <view class="code-btns"  wx:if="{{companyInfo && companyInfo.companyName}}">
+      <view class="create-postion-tip" wx:if="{{showPositionTip && !clickPositionClose}}" style="position:relative;top:-30rpx;">
+      <text class="fa fa-telegram" ></text>
+       <view class="tip-content">
+          <view class="">您还没有创建职位，微聘小程序可直接投递简历哦！<text  style="color:#5CB3FF;font-size:30rpx;" catchtap='linkTo' data-url='3'>  好的，创建职位再分享 ></text></view>
+          <!-- <view class="" style="color:#5CB3FF;font-size:30rpx;" catchtap='linkTo' data-url='3'>好的，创建职位再分享 ></view> -->
+       </view>
+       <image class="img" src="/images/icon-close.png" mode="widthFix" catchtap='closePositionTip' style="width:50rpx;margin-left:10rpx;"></image>
+       <!-- <text class="" style="font-size:50rpx;color:#999;margin-left:10rpx;" catchtap='closePositionTip' >×</text> -->
+    </view>
+    <view class="code-wrap" catchtap='previewQrcode'>
+       <image class="img" src="{{quickSpQrcode}}"></image>
+    </view>
+    <view class="btns">
+      <form class="btn-preview btn-box" bindsubmit='linkTo' data-url='2' report-submit="true">
+        <image class="img" src="/images/btn-preview-bg.png" mode="widthFix"></image>
+        <!-- <text class="text">预览</text> -->
+        <button class="remove-button-default-style text" form-type='submit'>预览</button>
+      </form>
+      <form  class="btn-share btn-box" bindsubmit='toggleShareSheet' report-submit="true">
+        <image class="img" src="/images/btn-share-bg.png" mode="widthFix"></image>
+        <!-- <text class="text">分享</text> -->
+        <button class="remove-button-default-style text" form-type='submit'>分享</button>
+      </form>
+    </view>
+ 
+    <!-- <view class="bubble-frame {{showBubbleDesktop?'andBubbleDesk':''}}">
+      <view class="bubble">前往创建您的招聘职位</view>
+    </view> -->
+  </view>
+  <view class="start-wrap" wx:else>
+    <form class="form" report-submit="true" bindsubmit="linkTo" data-url='1'>
+      <button type="primary" class="save-btn btn-w690" form-type='submit'>创建微官网</button>
+     </form>
+     <view class="img-box"><image class="img" src="/images/footer_banner.png"></image></view>
+  </view>
+  <!-- 生成海报  -->
+  <view class='show_img' bindtap="closeShowimg" wx:if='{{showImg}}'>
+    <view class='show_img_con'>
+      <image src='{{showImgurl}}' mode="widthFix"></image>
+    </view>
+    <view bindtap="saveImg" class='show_img_btn'><image src='https://aijuhr.com/images/xcx/dowload.png'></image>保存图片</view>
+  </view> 
+  <!-- 登录弹框  -->
+  <login-dialog id="loginDialog" bind:authPhoneNumberSuccess="authPhoneNumberSuccess"></login-dialog>
+  <!-- canvas 画图区  -->
+  <canvas style="width: 560px; height: 590px;" canvas-id="firstCanvas" class='firstCanvas' ></canvas>  
+</view>
+ <operation open='{{open}}' bind:myevent="onMyEvent" operation-arr="{{operationArr}}"></operation>
+ <!-- 分享操作菜单actionSheet  -->
+ <view class='choose_con' wx:if="{{showShare}}" bindtap="toggleShareSheet" style="background:transparent;">
+    <view class='choose_con_btn'>
+      <button class='share_poster' bindtap="previewQrcode" data-target='friendCircle'>生成分享图到朋友圈</button>
+      <button class='share_pople' open-type="share">转发给好友或群友</button>
+      <button class='share_cancel'>取消</button>
+    </view>
+  </view>
+ <!-- <image class="bubble-desktop" src="/images/bubble-desktop.png" mode="widthFix" wx:if="{{showBubbleDesktop}}"></image> -->

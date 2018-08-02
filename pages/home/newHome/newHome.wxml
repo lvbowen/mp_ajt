@@ -1,0 +1,100 @@
+
+<header title="企业详情" showBack="1" color="{{!noData ? 'white' : ''}}" bindbackEvent="onBackEvent"></header>
+<view class="page-wrap" wx:if="{{!noData}}">
+  <view class="bg-color"></view>
+  <view class="company-card">
+     <view class="company-name">{{companyInfo.companyName || ''}}</view>
+     <view class="company-address">{{companyInfo.companyAddress || ''}}</view>
+     <view class="industry-scale"><text>{{companyInfo.industryStr || ''}}</text> ｜ <text>{{companyInfo.scaleStr || ''}}</text></view>
+     <view class="company-logo"><image src="{{companyInfo.logoUrl}}" mode='aspectFill'></image></view>
+  </view>
+  <!-- company-position-wrap start  -->
+  <view class="company-position-wrap">
+    <!-- <view class="tabs {{tabsFixed?'tabs-fixed':''}}" id="tabs">
+        <view class="tab {{tabIndex==1?'active':''}}" catchtap='switchTab' data-tab='1'>公司介绍</view>
+        <view class="tab {{tabIndex==2?'active':''}}" catchtap='switchTab' data-tab='2'>在招职位</view>
+    </view> -->
+    <view class="company-wrap" hidden='{{tabIndex == 2}}'>
+          <view class="company-intro">
+            <view class="info-header">公司简介</view>
+            <view class="intro-content {{isOpen?'height-auto':''}}">
+              <rich-text nodes="{{companyInfo.introduction || ''}}"></rich-text>
+            </view>
+            <view class="direc iconfont icon-unfold" hidden="{{isOpen}}" catchtap='downOrUp'></view>
+            <view class="direc iconfont icon-unfold {{isOpen?'is-open':''}}"  hidden="{{!isOpen}}" catchtap='downOrUp'></view> 
+          </view>
+          <view class="company-contact">
+            <view class="info-header">联系方式</view>
+            <view class="contact-content">
+              <view class="contact-info">
+                <view class="contact-person"><image class="img" mode="widthFix" src="/images/icon-contactMan2.png"></image>联系人：{{companyInfo.contactMan || ''}}</view>
+                <view class="contact-phone" ><image class="img" mode="widthFix" src="/images/icon-phone3.png" width></image>电  话： {{companyInfo.companyPhone}}</view>
+              </view>  
+            </view>
+          </view>
+          <view class="company-address">
+            <view class="info-header">公司地址</view>
+            <view class="address" catchtap='linkTo' data-url="4">
+                <image class="img" mode="widthFix" src="/images/icon-location.png" style="width:22rpx;margin-right:16rpx;"></image>
+                <!-- <text class="fa fa-map-marker" style="color:#5CB3FF;font-size:34rpx;margin-right:16rpx;"></text> -->
+                {{companyInfo.companyAddress}}
+            </view>
+          </view>
+    </view>
+    <view class="position-wrap" hidden='{{tabIndex == 1}}'>
+        <!-- search area -->
+      <view class="search-bar" wx:if="{{(positionList && positionList.length>0) || inputVal}}">
+          <view class="search-bar__box">
+             <input type="text" class="search-bar__input" placeholder="输入关键词搜索职位" confirm-type="search" value="{{inputVal}}"  bindfocus="onFocus" bindblur="onBlur" bindconfirm="confirmSearch"  />
+             <icon class="icon-search" type="search" size="14" hidden='{{inputShowed}}'></icon>
+          </view>
+      </view>
+      <view class="no-position" wx:else>
+           <text>还没有职位~</text>
+      </view>
+      <!-- 职位列表  -->
+        <view class="position-list">
+          <view class="position border_bottom" wx:for="{{positionList}}" wx:key="{{id}}"  data-item="{{item}}" catchtap='goDetail' data-positionId="{{item.id}}">
+            <!-- <button class="btn-userinfo" open-type='getUserInfo' bindgetuserinfo="getUserInfo" data-positionId="{{item.id}}"> -->
+              <view class="position-name">
+                <text class="name">{{item.positionName}}</text>
+                <text class="salary">{{item.salary}}</text>
+              </view>
+              <view class="position-center">
+                <view class="center-tag">{{item.workCity}}</view>
+                <view class="center-tag">{{item.positionType}}</view>
+              </view>
+              <view class="position-bottom">
+                <text class="release-time">发布时间：{{item.publishTime}}</text>
+                <text class="views">浏览次数：{{item.positionVisit ? item.positionVisit : 0}}次</text>
+              </view>
+            <!-- </button> -->
+          </view>
+        </view>
+        <view class="no-more" wx:if="{{page && !page.hasNext && hasPosition || (page.totalPageCount == 0 && hasPosition)}}">没有更多职位了~</view> 
+    </view>
+  </view>  <!-- company-position-wrap end  -->
+  <view class="create-app" catchtap='linkTo' data-url="1" wx:if="{{!showTabbar}}">
+    <image class="img" src="/images/create-app2.png"></image>
+  </view>
+   <form class="form" report-submit="true" bindsubmit='saveFormId' wx:if="{{canShare}}">
+    <button class="my-share ele-fixed" open-type='share' form-type='submit'>
+      <image class="img" mode="widthFix" src="/images/icon-wytj.png"></image>
+    </button>
+   </form>
+   <form class="form" report-submit="true" bindsubmit='showTips' wx:else>
+    <button class="my-share ele-fixed" form-type='submit'>
+      <image class="img" mode="widthFix" src="/images/icon-wytj.png"></image>
+    </button>
+   </form>
+</view>
+<view class="no-data" wx:if="{{noData}}">
+   <image src="/images/placeholder-micro.png" mode='widthFix'></image>
+   <text class="" wx:if="{{!isSelf}}">主人有点小忙～还未创建官网</text>
+   <block wx:if="{{isSelf}}">
+      <text class="">完善微官网信息，让大家认识更优秀的你</text>
+      <button class="btn remove-button-default-style" catchtap='linkTo' data-url="5">去完善</button>
+   </block>
+   
+</view>
+<tabbar wx:if="{{showTabbar}}" currentIndex="1" otherCardId="{{otherCardId}}" otherFansId="{{otherFansId}}"  fromPage="{{fromPage}}"></tabbar>

@@ -1,0 +1,94 @@
+
+.page-privilege{
+  min-height: 100%;
+  box-sizing: border-box;
+  box-shadow:0rpx 2rpx 4rpx 0rpx rgba(203,203,203,0.5) inset;
+  padding:40rpx 32rpx 0;
+  background-color: #fff;
+  margin-top:64px;
+}
+.privilege-aside{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 110rpx;
+}
+.privilege-aside .privilege-title{  
+  margin-bottom: 12rpx;
+}
+.privilege-aside .privilege-title image{
+  width:28rpx;
+  margin-left:16rpx;
+  margin-right: 16rpx;
+}
+.privilege-aside .privilege-title2{ 
+  color: #FBB232;
+  margin-bottom: 32rpx;
+}
+.privilege-aside>.img{
+  width:288rpx;
+  margin-bottom: 108rpx;
+}
+.privilege-aside .vip-maker{
+  width:588rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.privilege-aside .vip-maker .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width:263rpx;
+  height:80rpx;
+  background:rgba(92,179,255,1);
+  box-shadow:0rpx 2rpx 8rpx 0rpx rgba(92,179,255,1);
+  border-radius:40rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+.privilege-aside .vip-maker .vip-box .img{
+   width:32rpx; 
+   margin-right: 26rpx;
+}
+.privilege-aside .vip-maker .maker-box .img{
+   width:26rpx; 
+   margin-right: 26rpx;
+}
+/* 表格 */
+.privilege-table-wrap{
+  padding-bottom: 30rpx;
+}
+.privilege-table{
+  border-left:1rpx solid #E4E7ED;
+  border-bottom:1rpx solid #E4E7ED;
+}
+.privilege-table .tr{
+  display: flex;
+  border-top:1rpx solid #E4E7ED;
+}
+.privilege-table .td{
+  width:228rpx;
+  min-height:90rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-right:1rpx solid #E4E7ED;
+  font-size: 28rpx;
+  color: #666666;
+  box-sizing: border-box;
+}
+.privilege-table .tr .td:first-child{
+  justify-content: flex-start;
+  background:rgba(255,250,243,1);
+  padding-left:30rpx;
+}
+.privilege-table .gfl .info,.privilege-table .ewjl .info{
+   font-size: 24rpx;
+   color: #DBB272;
+   padding:16rpx 22rpx;
+}
+.privilege-table .ewjl .td:nth-child(2){
+  color: #DBB272;
+  font-size:54rpx;
+}

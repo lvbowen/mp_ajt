@@ -1,0 +1,58 @@
+<view class="page-edit-company">
+        <view class="img-bg"></view>
+        <view class="edit-cardInfo-wrap {{addMargin ? 'add-margin' : ''}}">
+            <view class="create_part_1">
+                <view class="company-logo" catchtap='chooseLogoImage'>
+                    <image class="img-logo" mode="aspectFill" src="{{cardInfo.headImgUrl}}"></image>
+                </view>
+                <view class="user-info-part">
+                    <view class="user-nick">
+                        <input maxlength='8' class="input" placeholder='微信昵称（必填）' placeholder-class='placeholder' value="{{cardInfo.nickName}}" data-prop="cardInfo.nickName" bindinput="operateInput"></input>
+                    </view>
+                    <view class=" user-job">
+                        <input class="input" placeholder='您的职位（必填）' placeholder-class='placeholder' value="{{cardInfo.position}}" data-prop="cardInfo.position" bindinput="operateInput"></input>
+                    </view>
+                    <view class="company-name">
+                        <input class="input" placeholder='公司名称（必填）' placeholder-class='placeholder' value="{{cardInfo.companyName}}" data-prop="cardInfo.companyName" bindinput="operateInput"></input>
+                    </view>
+                </view>
+            </view>
+            <form class="btn-share btn-box" style="position:relative;display: block;" bindsubmit='share' report-submit="true">
+                <button form-type='submit' class="form-input-btn" style="">
+                    <view class="create_part_2">
+                        <view class="section user-phone">
+                            <input class="input" type="number" placeholder='您的手机号（必填）' placeholder-class='placeholder' value="{{cardInfo.phone}}" data-prop="cardInfo.phone" bindinput="operateInput" bindblur='checkData'></input>
+                            <!-- <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号 </button> -->
+                        </view>
+                        <view class="section user-wx">
+                            <input class="input" placeholder='您的微信号（必填）' placeholder-class='placeholder' value="{{cardInfo.wechatNum}}" data-prop="cardInfo.wechatNum" bindinput="operateInput"></input>
+                        </view>
+                        <view class="section user-email">
+                            <input class="input" placeholder='您的邮箱（必填）' placeholder-class='placeholder' value="{{cardInfo.email}}" data-prop="cardInfo.email" bindinput="operateInput" bindblur='checkData'></input>
+                        </view>
+                        <view class="section user-addr">
+                            <textarea class="{{isIOS?'ios-textarea':''}}" placeholder='您的地址（必填）' placeholder-class='placeholder' value="{{cardInfo.address}}" data-prop="cardInfo.address" bindinput="operateInput" bindfocus="taFocus" bindblur="taBlur" auto-height='true'></textarea>
+                            <view class="getLocationBtn" bindtap='chooseLocation'>
+                                <image src="/images/icon-map.png"></image>
+                            </view>
+                        </view>
+
+                    </view>
+                </button>
+
+            </form>
+
+            <!-- <button open-type='getUserInfo' bindgetuserinfo="getUserInfo">获取用户信息</button>    -->
+            <view class="btns">
+                <form class="btn-preview btn-box" bindsubmit='save' report-submit="true">
+                    <image class="img" src="/images/btn-save-bg.png" mode="widthFix"></image>
+                    <button class="remove-button-default-style text {{isIOS?'':'and-text'}}" form-type='submit'>保存</button>
+                </form>
+                <form class="btn-share btn-box" bindsubmit='share' report-submit="true">
+                    <image class="img" src="/images/btn-share-bg.png" mode="widthFix"></image>
+                    <button wx:if="{{isVip==1}}" class="remove-button-default-style text  {{isIOS?'':'and-text'}}" open-type="share" form-type='submit'>分享</button>
+                    <button wx:else class="remove-button-default-style text  {{isIOS?'':'and-text'}}" catchtap='showTips'>分享</button>
+                </form>
+            </view>
+        </view>
+</view>

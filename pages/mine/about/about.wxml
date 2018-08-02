@@ -1,0 +1,67 @@
+<view class="page-about">
+  <header title="关于我们" showBack="1" color="white"></header>
+  <view class="banner-box">
+   <image class="img" src="https://aijuhr.com/images/xcx/ajt_banner-about.jpg" mode="widthFix"></image>
+ </view>
+ <view class="about-wrap">
+  <view class="about-intro font-28 color_666666">
+    <view class="p">爱聚通是一款智能电子名片，基于微信与AI技术研发，颠覆传统名片和企业官网，彻底打通企业管理者、销售与客户之间的关系，全方位提升企业销售及销售管理能力。</view>
+    <view class="p">爱聚科技专注于saas软件服务、为客户打造智能营销、社交营销工具旗下拥有电商宝、云电宝、爱聚SCRM等多款具有行业影响力产品，已获数百万用户认可。</view>
+    <view class="p">爱聚通赋能中国8000万销售人员，助力企业生意成长。</view>
+  </view>
+  <view class="about-partner about-item">
+    <view class="title-box">
+      <view class="title-bg"></view>
+      <text>合作伙伴</text>
+    </view>
+    <view class="content-box ">
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo01.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo02.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo03.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo04.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo05.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo06.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo07.jpg" mode='widthFix'></image>
+      </view>
+      <view class="logo-box">
+        <image class="img" src="/images/parnterLogo08.jpg" mode='widthFix'></image>
+      </view>
+    </view>
+  </view>
+  <view class="about-hhr about-item">
+    <view class="title-box">
+      <view class="title-bg"></view>
+      <text>招募城市合伙人</text>
+    </view>
+    <view class="content-box font-28 color_666666">
+      <view class="p">爱聚渠道是爱聚科技发展的核心力量，由渠道招商、运营、技术支持、客服、培训以及数据管理六大核心部门组成。爱聚渠道核心成员均来自阿里、华为、金蝶、用友等互联网行业的专业人士组成的精英团队；爱聚渠道用自身的热情和真诚为全球代理商提供全方位支持，涵盖团队组建、培训支持、资源支持、推广支持、物料支持、市场支持、技术支持、售后客服等服务。</view>
+      <view class="p">“分享，成长，合作，共赢”是爱聚的渠道精神，爱聚渠道致力于寻找一群志同道合的创业伙伴，以合伙人的形式去扶持代理商共同成长，协助代理商快速成长为当地最具影响力的saas软件服务公司，实现你们的创业梦想。</view>
+      <view class="p">您的梦想，我们的事业 ！ 您的事业，我们的责任！</view>
+    </view>
+  </view>
+  <view class="about-contact about-item">
+    <view class="title-box">
+      <view class="title-bg"></view>
+      <text>联系我们</text>
+    </view>
+    <view class="content-box">
+      <view class="p"><image src="/images/icon-tel.png" mode="widthFix"></image><text>0571-89935939</text></view>
+      <view class="p"><image src="/images/icon-email.png" mode="widthFix"></image><text>biz@iyenei.com</text></view>
+      <view class="p"><image src="/images/icon-addr.png" mode="widthFix"></image><text>杭州市西湖区文一西路崇义路口公元里7幢6楼</text></view>
+    </view>
+  </view>
+ </view>
+</view>

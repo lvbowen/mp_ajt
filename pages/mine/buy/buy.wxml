@@ -1,0 +1,48 @@
+<view class="page-buy">
+  <header title="确认支付" position="fixed" showBack="1" ></header>
+  <view class="buy-title">
+    <view class="left font-28 color_666666">VIP会员套餐</view>
+    <view class="right" catchtap='linkTo'>
+       <image class="img" src="/images/icon-vip.png" mode='widthFix'></image>
+       <text>VIP特权</text> 
+    </view>
+  </view>
+  <view class="buy-package">
+      <view class="packages">
+        <view class="package-item {{selectedPackageId == 2 ? 'active' : ''}}" catchtap='selectPackage' data-pid='2'>
+          <view class="package-left">
+             <text class="package-name">爱聚通终身VIP</text>
+             <text class="package-content">成为创客：购买终身会员，您将获得 爱聚通永久使用权，推荐好友更能获 得45%高额返利，好友继续推荐，您 还可以获得15%额外奖励金。</text>
+          </view>
+          <view class="package-right">
+             ￥<text class="package-money">2680</text>
+          </view>
+        </view>
+        <view class="package-item {{selectedPackageId == 1 ? 'active' : ''}}" catchtap='selectPackage' data-pid='1'>
+          <view class="package-left">
+             <text class="package-name">爱聚通1年VIP充值</text>
+             <text class="package-content">成为VIP会员：购买VIP会员，您将获得 爱聚通全年无限量使用权利，推荐好友 还将获得30%高额返利。</text>
+          </view>
+          <view class="package-right">
+             ￥<text class="package-money">1</text>
+          </view>
+        </view>
+      </view>
+      <view class="pay-method">
+        <view class="pay-title font-28 color_666666">支付方式</view>
+        <view class="method-item">
+           <image class="img" src="/images/pay-wechat.png" mode='widthFix'></image>
+           <text class="name">微信</text>
+           <icon class="icon" type="success" size="19" color="#5CB3FF"></icon>
+        </view>
+      </view>
+  </view>
+  <view class="buy-fixed">
+     <view class="total-price border_top">
+        总价 <text class="price">￥ {{packages[selectedPackageId - 1].money}}.00</text>
+     </view>
+     <form  class="" bindsubmit='goPay' report-submit="true" >
+        <button class="remove-button-default-style btn-pay" form-type='submit'>确认支付</button>
+     </form>
+  </view>
+</view>

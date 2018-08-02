@@ -1,0 +1,14 @@
+<view class="page-vip">
+  <header showBack="{{showBack}}" color="white" bindbackEvent="onBackEvent"></header>
+  <image class="bg-img" src="https://aijuhr.com/images/xcx/ajt_page-vip.jpg" mode="widthFix"></image>
+  <view class="btn-wrap">
+     <form class="form1" bindsubmit='linkTo' report-submit='true'>
+        <button class="btn remove-button-default-style" form-type='submit'>成为创客</button>
+     </form>
+     <form class="form2" bindsubmit='saveFormId' report-submit='true'>
+        <button class="btn remove-button-default-style" open-type='share' form-type='submit'>
+          <image class="" src="/images/icon-fabulous.png"></image>推荐给好友
+        </button>
+     </form>
+  </view>
+</view>

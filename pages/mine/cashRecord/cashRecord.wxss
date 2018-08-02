@@ -1,0 +1,83 @@
+page{
+  height: -webkit-calc(100% - 64px);
+  height: calc(100% - 64px);
+}
+.scroll-view{
+  padding:0rpx 30rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  margin-top:64px;
+}
+.record-item{
+  width:680rpx;
+  padding:35rpx 30rpx 33rpx 40rpx;
+  box-sizing: border-box;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.08);
+  border-radius:16rpx;
+  margin:0 auto 24rpx;
+  position: relative;
+  top:4rpx;
+}
+.record-item:first-child{
+  margin-top:30rpx;
+}
+.record-item .record-hd{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+  line-height: 50rpx;
+}
+.record-item .record-hd .time text{
+  margin-left: 24rpx;
+}
+.record-item .record-hd .money{
+  font-weight: 550;
+}
+.record-item .record-bd{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.record-item .record-bd .state{
+   color: #49CC93;
+}
+.record-item .record-bd .state.red{
+   color: #FF566B;
+}
+.record-item .record-bd .btn-submit{
+  width:144rpx;
+  height:52rpx;
+  line-height: 52rpx;
+  font-size:24rpx;
+  color: #fff;
+  background:rgba(92,179,255,1);
+  border-radius:26rpx;
+  text-align: center;
+}
+.loading{
+  text-align: center;
+  font-size:28rpx;
+  color: #999;
+  line-height: 30rpx;
+}
+.loading .fa{
+  font-size:28rpx;
+  margin-right: 10rpx;
+}
+.scroll-view.true{
+  background-color: #f8f8fc;
+}
+.no-data{
+  padding-top:200rpx;
+  font-size: 28rpx;
+  color: #B2B2B2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.no-data image{
+  width:140rpx;
+  margin-bottom: 60rpx;
+}

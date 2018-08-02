@@ -1,0 +1,100 @@
+
+page{
+  height: -webkit-calc(100% - 64px);
+  height: calc(100% - 64px);
+}
+.page-search-address{
+  min-height: 100%;
+  margin-top:64px;
+}
+.page-header{
+  display: flex;
+  height:102rpx;
+  padding-left:30rpx;
+  padding-right:36rpx;
+  background-color:#fff;
+  align-items: center;
+  justify-content: center;
+}
+.page-header .city{
+  width:218rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.page-header .city .city-name{
+    margin-right:32rpx;
+    font-size:28rpx;
+    color: #666;
+}
+.page-header .city .fa{
+   font-size:28rpx;
+   color: #98A9BF;
+}
+.page-header .input-box{
+   flex:1;
+   height: 70rpx;
+   border:1rpx solid #e5e5e5;
+   border-radius: 8rpx;
+   padding-left:12rpx;
+}
+.page-header .input-box input{
+  line-height: 40rpx;
+  margin-top:15rpx;
+  font-size:28rpx;
+}
+.no-location{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top:155rpx;
+
+}
+.no-location .img{
+  width:236rpx;
+  height: 216rpx;
+  margin-bottom: 90rpx;
+}
+.no-location text{
+   font-size:28rpx;
+   line-height: 1.5;
+   color: #B2B2B2;
+}
+.no-location .text1{
+   margin-bottom: 20rpx;
+}
+.no-location .text2{
+   color: #333;
+}
+.page-body{
+  width:690rpx;
+  background: #fff;
+  padding:0 30rpx;
+  border-top: 1rpx solid #e5e5e5;
+  overflow-y: scroll;
+}
+.company-item{
+  border-bottom: 1rpx solid #e5e5e5;
+  padding:24rpx 100rpx 24rpx 0;
+  position: relative;
+}
+.company-item:last-child{
+  border-bottom: 0;
+}
+.company-item .company-name{
+  line-height: 45rpx;
+  font-size: 32rpx;
+  color: #666;
+  margin-bottom: 6rpx;
+}
+.company-item .company-address{
+  font-size:24rpx;
+  color: #B2B2B2;
+  line-height: 32rpx;
+}
+.company-item .arrow-right{
+  position: absolute;
+  right: 4rpx;
+  top:58rpx;
+}

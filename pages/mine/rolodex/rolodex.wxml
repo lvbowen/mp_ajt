@@ -1,0 +1,72 @@
+<view class="page-rolodex">
+  <header showBack="1" color="white" title="名片夹"></header>
+  <view class="bg-color"></view>
+  <view class="rolodex-wrap">
+    <!-- 我的  -->
+    <view class="person-item my-card" catchtap='linkTo' data-json='{"fansId":{{nameCardPersonal.ajtFansId}}, "cardId":{{nameCardPersonal.id}}}'>
+      <view class="img-box">
+        <image class="img" src="{{nameCardPersonal.headImgUrl}}" mode="widthFix"></image>
+        <image class="img" src="/images/default-logo2.png" mode="widthFix"></image>
+      </view>
+      <view class="person-info">
+        <view class="nick-name font-32 color_333333">        
+          <image class="img" src="/images/icon-vip-member.png" wx:if="{{nameCardPersonal.vipType == 1}}"></image>
+          <image class="img" src="/images/icon-maker-member.png" wx:elif="{{nameCardPersonal.vipType == 2}}"></image>  
+          <text class="text">{{nameCardPersonal.nickName}}</text>       
+        </view>
+        <view class="position-name">{{nameCardPersonal.position}}</view>
+        <view class="company-name font-24 color_B2B2B2">{{nameCardPersonal.companyName}}</view>
+      </view>
+      <view class="mark">
+        <text>我的</text>
+      </view>
+    </view>
+    <!-- 输入框  -->
+    <view class="weui-search-bar" style="display:none;">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14" color="#929292"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索关键词" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" bindconfirm="confirmSearch" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14" color="#929292"></icon>
+          <view class="weui-search-bar__text">搜索关键词</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+    <!-- 列表  -->
+    <view class="person-list" style="margin-top:80rpx;min-height:100rpx;">
+      <view class="inner-wrap" wx:for="{{nameCardList}}" wx:key="letter" wx:for-item="innerItem">
+        <view class="inner-letter">{{innerItem.letter}}</view>
+        <view class="inner-list">
+          <view class="person-item" catchtap='linkTo' wx:for="{{innerItem.data}}" wx:key="id" data-json='{"fansId":{{item.ajtFansId}}, "cardId":{{item.id}}}'>
+            <!-- <button class="remove-button-default-style person-item" form-type='submit'> -->
+              <view class="img-box">
+                <image class="img" src="{{item.headImgUrl}}" wx:if="{{item.headImgUrl}}"></image>
+                <image class="img" src="{{defaultAvatar}}" wx:else></image>
+              </view>
+              <view class="person-info">
+                <view class="nick-name font-32 color_333333">
+                  <image class="img" src="/images/icon-vip-member.png" wx:if="{{item.vipType == 1}}"></image>
+                  <image class="img" src="/images/icon-maker-member.png" wx:elif="{{item.vipType == 2}}"></image>
+                  <text class="text ell">{{item.nickName}}</text>
+                </view>
+                <view class="position-name">{{item.position || ''}}</view>
+                <view class="company-name font-24 color_B2B2B2">{{item.companyName || ''}}</view>
+              </view>
+              <view class="person-follow" catchtap='callPhone' data-phone="{{item.phone}}" wx:if="{{item.phone}}">
+                <image class="img" src="/images/icon-tel_blue.png" mode="widthFix"></image>
+              </view>
+            <!-- </button> -->
+          </view>
+        </view>   <!-- inner-list -->
+      </view>  
+    </view>
+    <!--   -->
+    <view class="person-total">共有{{cardTotal}}位联系人</view>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "navigationBarTextStyle":"white",
+  "usingComponents": {
+    "header": "/components/header/header"
+  }
+}

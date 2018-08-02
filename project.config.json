@@ -49,7 +49,7 @@
 					"id": 2,
 					"name": "分享名片",
 					"pathName": "pages/card/shareCard/shareCard",
-					"query": "cardId=149&fansId=33",
+					"query": "cardId=172&fansId=47",
 					"scene": "1012"
 				},
 				{
@@ -82,6 +82,27 @@
 					"name": "提现记录",
 					"pathName": "pages/mine/cashRecord/cashRecord",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "名片夹",
+					"pathName": "pages/mine/rolodex/rolodex",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": -1,
+					"name": "人脉广场",
+					"pathName": "pages/square/index/index",
+					"query": "",
+					"scene": "1012"
+				},
+				{
+					"id": 10,
+					"name": "微官网详情",
+					"pathName": "pages/home/newHome/newHome",
+					"query": "cId=97&fansId=46&cardId=171&from=share",
+					"scene": "1007"
 				}
 			]
 		}

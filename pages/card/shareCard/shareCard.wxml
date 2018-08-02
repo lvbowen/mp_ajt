@@ -1,0 +1,58 @@
+<view class="page-wrap">
+  <scroll-view scroll-y style="height:{{wH}}px;"> 
+     <view  class="img-bg"></view>
+      <header title="TA的名片" showBack="1" color="white" bindbackEvent="onBackEvent"></header> 
+    <view class="cz-btns">
+        <form class="btn-share btn-box" bindsubmit='share' report-submit="true" wx:if="{{canShare}}">
+            <button class="share-btn" open-type="share" form-type='submit'>
+                <image src="/images/icon-share.png" />转发
+            </button>
+        </form>
+         <form class="btn-share btn-box" bindsubmit='showTips' report-submit="true" wx:else>
+            <button class="share-btn"  form-type='submit'>
+                <image src="/images/icon-share.png" />转发
+            </button>
+        </form>
+        <view class="right-btns">
+            <button class="visit-btn">
+                <image src="/images/icon-lick.png" />{{cardInfo.visitCount || 0}}
+                <view class="title">浏览次数</view>
+            </button>
+            <button class="lick-btn" catchtap='lick'>
+                <image animation="{{animationUp}}" src="/images/icon-lick-{{isLick?'1':'0'}}.png" /> {{cardInfo.beLikedCount || 0}}
+                <view class="title">受喜欢</view>
+            </button>
+        </view>
+    </view>
+    <view class="card-info">
+        <view class="user-card">
+            <view class="card-info-1">
+                <view class="company-name">{{cardInfo.nickName || ''}}</view>
+                <view class="user-nick {{cardInfo.position ? '' : 'no-info'}}">{{cardInfo.position || ''}}</view>
+                <view class="user-job {{cardInfo.companyName ? '' : 'no-info'}}">{{cardInfo.companyName || '我的公司'}}</view>
+                <view class="company-logo" wx:if="{{cardInfo.headImgUrl}}">
+                    <image src="{{cardInfo.headImgUrl}}" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class="card-info-2" wx:if="{{showCard2}}">
+                <view wx:if="cardInfo.phone!=''" class="user-phone">{{cardInfo.phone || ''}}</view>
+                <view wx:if="cardInfo.wechatNum!=''" class="user-wx">{{cardInfo.wechatNum || ''}}</view>
+                <view wx:if="cardInfo.email!=''" class="user-email">{{cardInfo.email || ''}}</view>
+                <view wx:if="cardInfo.address!=''" class="user-addr">{{cardInfo.address || ''}}</view>
+            </view>
+        </view>
+        <view class="btn-area {{fromPage == 'inside' ? 'inside' : ''}}">
+          <form  class="btn-contact" bindsubmit='saveContact' report-submit="true">
+              <button class="btn remove-button-default-style"  form-type='submit'>保存通讯录</button>
+          </form>
+          <form  class="btn-share btn-box" bindsubmit='share' report-submit="true" wx:if="{{fromPage != 'inside'}}">
+              <button wx:if="{{linkPage == 1}}" class="go-btn remove-button-default-style" open-type="share" form-type='submit'>分享名片</button>
+              <button wx:else class="go-btn remove-button-default-style" catchtap="linkTo" form-type='submit'>我也要开通名片</button>
+          </form>        
+        </view>     
+        <view class="flow-btn" catchtap="linkTo" wx:if="{{showMyCardBtn}}">我的名片</view>
+    </view>
+  </scroll-view>
+</view>
+<operation open='{{open}}' bind:myevent="onMyEvent" operation-arr="{{operationArr}}"></operation>
+<tabbar currentIndex="0" otherCardId="{{shareCardId}}" otherFansId="{{shareFansId}}" otherCId="{{companyInfoId}}" fromPage="{{fromPage}}"></tabbar>

@@ -1,0 +1,13 @@
+<!-- map.wxml -->
+<header title="公司地图" showBack="1" position="fixed"></header>
+<map id="map" longitude="{{companyInfo.longitude}}" latitude="{{companyInfo.latitude}}" scale="14" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap"  bindregionchange="regionchange" show-location>
+<!-- <cover-view class="cover-wrap">
+  <cover-view class="name ell">{{companyInfo.companyName}}</cover-view>
+  <cover-view class="item font-gray-26 ell">
+    <cover-view class="fa fa-map-marker"></cover-view>{{companyInfo.address}}
+  </cover-view>
+  <cover-view class="item font-gray-26">
+    <cover-view class="fa fa-phone"></cover-view> {{companyInfo.phone}}
+    </cover-view>
+</cover-view> -->
+</map>

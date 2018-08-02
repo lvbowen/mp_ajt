@@ -1,0 +1,103 @@
+.share_icon{
+  position: fixed;
+  z-index: 1;
+  right: 36rpx;
+  bottom: 100rpx;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.share_icon image{
+  width: 100%;
+  height: 100%;
+}
+.choose_con{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.choose_con button{
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: #ffffff;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 32rpx;
+}
+.choose_con button::after{
+  border: none;
+}
+.choose_con button.share_pople{
+  border-bottom: 12rpx solid #E3E3E9;
+}
+.choose_con button.share_poster{
+  height: 112rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.choose_con_btn{
+  position: absolute;
+  width:100%;
+  bottom: 0;
+  animation: aniBottom 0.5s;
+  background: transparent;
+  box-shadow: 0 -2rpx 5rpx #e5e5e5; 
+}
+@-webkit-keyframes aniBottom{
+   0%{ bottom:-312rpx;}
+   100% { bottom:0;}
+}
+@keyframes aniBottom{
+   0%{ bottom:-312rpx;}
+   100% { bottom:0;}
+}
+.firstCanvas{
+  position: absolute;
+  top: 0;
+  left: -1000%;   
+}  
+.show_img{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.show_img_con{
+  width: 560rpx;
+  height: 590rpx;
+  overflow: hidden;
+  margin:0 auto;
+}
+.show_img_con image{
+  width: 100%;
+}
+.show_img_btn{
+  display: block;
+  width: 277rpx;
+  height: 94rpx;
+  line-height: 94rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+  color: #ffffff;
+  background-color: #5aa2e7;
+  margin-top:90rpx;
+  border-radius: 10rpx;
+}
+.show_img_btn image{
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 10rpx;
+}

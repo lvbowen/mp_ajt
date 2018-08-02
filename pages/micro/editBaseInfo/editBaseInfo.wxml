@@ -1,0 +1,75 @@
+
+
+<view class="page-edit-company">
+  <header title="编辑公司信息" showBack="1" position='fixed'></header>
+  <view class="edit-company-wrap {{addMargin ? 'add-margin' : ''}}">
+    <view class="company-logo" catchtap='chooseLogoImage'>
+       <image class="img-logo" mode="aspectFill" src="{{logoSrc}}"></image>  
+       <image class="icon-edit" src="/images/ic_edit.png"></image>    
+    </view>
+    <view class="section company-name">
+        <view class="sec-head">公司名称</view>
+        <view class="sec-body">
+           <input class="input" placeholder='请填写公司名称' placeholder-class='placeholder' value="{{companyInfo.companyName}}" data-prop="companyInfo.companyName" bindinput="operateInput" bindblur='onblur'></input>
+        </view>
+        <scroll-view class="company-list" scroll-y hidden='{{!showCompanyList}}'>
+           <view class="company-item" wx:for="{{companyList}}" wx:key="{{item}}" catchtap='selectCompany' data-item="{{item}}">{{item}}</view>
+        </scroll-view>
+    </view>
+    <view class="section company-industry">
+        <view class="sec-head">所属行业</view>
+        <view class="sec-body">
+            <picker class="picker-component" bindchange="bindPickerChange" data-index="1" value="{{domainIndex}}" range="{{domainList}}" range-key="name">
+              <view class="placeholder" wx:if="{{companyInfo.industryId == -1 || !companyInfo.industryId}}">所属行业</view>
+              <view class="picker" wx:else>
+                {{domainList[domainIndex].name}}
+              </view>
+              <view class="arrow-right"></view> 
+            </picker>
+        </view>
+    </view>
+    <view class="section company-scale">
+        <view class="sec-head">公司规模</view>
+        <view class="sec-body">
+           <picker class="picker-component" bindchange="bindPickerChange" data-index="2" value="{{scaleIndex}}" range="{{scales}}" range-key="label">
+              <view class="placeholder" wx:if="{{companyInfo.scaleId == -1 || !companyInfo.scaleId}}">请选择公司规模</view>
+              <view class="picker" wx:else>
+                {{scales[scaleIndex].label}}
+              </view>
+              <view class="arrow-right"></view>
+            </picker>
+        </view>
+    </view>
+    <view class="section company-address">
+        <view class="sec-head">公司地址</view>
+        <view class="sec-body" catchtap='linkTo' data-url="1">
+          <view class="placeholder" style="line-height:45rpx;margin-bottom:18rpx;" wx:if="{{!companyInfo.companyAddress}}">请填写公司地址</view>
+          <view class="picker ell" wx:else>{{companyInfo.companyAddress}}</view>
+           <!-- <input class="input" placeholder='请填写公司地址' placeholder-class='placeholder' ></input>  -->
+           <view class="arrow-right"></view>
+        </view>
+    </view>
+    <view class="section company-concat">
+        <view class="sec-head">公司联系人</view>
+        <view class="sec-body">
+           <input class="input" placeholder='请填写公司联系人' placeholder-class='placeholder' value="{{companyInfo.contactMan}}" data-prop="companyInfo.contactMan" bindinput="operateInput"></input>
+        </view>
+    </view>
+    <view class="section company-phone">
+        <view class="sec-head">公司联系方式</view>
+        <view class="sec-body">
+           <input class="input" placeholder='请填写公司联系方式' placeholder-class='placeholder' value="{{companyInfo.companyPhone}}" data-prop="companyInfo.companyPhone" bindinput="operateInput"></input>
+        </view>
+    </view>
+    <view class="section company-intro">
+        <view class="sec-head">公司介绍<text class="length">{{companyInfo.introduction.length}}/500</text></view>
+        <view class="sec-body  ">
+            <textarea class="textarea"  maxlength='500' placeholder='请输入公司介绍' placeholder-class='placeholder' value="{{companyInfo.introduction}}" data-prop="companyInfo.introduction" bindinput="operateInput" bindfocus="taFocus" bindblur="taBlur"></textarea>
+        </view>
+    </view>
+    <form class="" report-submit="true" bindsubmit="save">
+         <button class="save-btn btn-blue {{!companyInfo.companyName || companyInfo.industryId==-1 || companyInfo.scaleId==-1 || !companyInfo.companyAddress || !companyInfo.companyPhone || !companyInfo.contactMan || !companyInfo.introduction ? 'btn-disabled' : ''}}" form-type='submit' disabled='{{!companyInfo.companyName || companyInfo.industryId==-1 || companyInfo.scaleId==-1 || !companyInfo.companyAddress || !companyInfo.companyPhone || !companyInfo.contactMan || !companyInfo.introduction}}' >保存</button>  
+    </form>
+   
+  </view>
+</view>

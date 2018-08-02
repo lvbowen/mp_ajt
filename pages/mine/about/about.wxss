@@ -1,0 +1,85 @@
+.banner-box{
+  width: 100%;
+  height: 368rpx;
+  overflow: hidden;
+}
+.banner-box .img{
+  width: 100%;
+}
+.page-about{
+  background: #ffffff;
+}
+.about-wrap{
+  padding:50rpx 32rpx;
+}
+.about-intro .p{
+  margin-bottom:40rpx;
+}
+.about-item{
+  font-size: 28rpx;
+  line-height: 1.4;
+  color: #666;
+  margin-top:100rpx;
+}
+.about-item .title-box{
+  font-size:56rpx;
+  color: #666666;
+  height: 98rpx;
+  line-height: 92rpx;
+  padding-left:30rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+}
+.about-item .title-box .title-bg{
+  width:94rpx;
+  height:94rpx;
+  background:linear-gradient(135deg,rgba(92,179,255,1),rgba(178,253,255,1));
+  box-shadow:0rpx 2rpx 20rpx 1rpx rgba(94,216,236,1);
+  border-radius:47rpx;
+  position: absolute;
+  left:0;
+  top:0rpx;
+}
+.about-item .title-box text{
+  position: relative;
+  z-index: 1;
+}
+.about-partner .content-box{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.about-partner .logo-box{
+  width:160rpx;
+  height:151rpx;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.08);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24rpx;
+}
+.about-partner .logo-box .img{
+  width:140rpx;
+}
+.about-hhr .content-box .p{
+   margin-bottom:40rpx;
+}
+.about-contact .content-box{
+  padding-left:20rpx;
+}
+.about-contact .content-box .p{
+  display: flex;
+  align-items: center;
+  font-size:28rpx;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 10rpx;
+}
+.about-contact .content-box .p image{
+  width: 32rpx;
+  margin-right: 35rpx;
+}
+.about-contact .content-box .p:first-child image{
+  width: 30rpx;
+}

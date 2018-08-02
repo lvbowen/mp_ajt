@@ -1,0 +1,10 @@
+{
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "公司地图",
+  "backgroundColor": "#f1f5f8",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "header": "/components/header/header"
+  }
+}

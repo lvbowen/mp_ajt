@@ -1,0 +1,208 @@
+.page-rolodex{
+  min-height: 100%;
+  position: relative;
+}
+.bg-color{
+  position: absolute;
+  top:0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height:376rpx ;
+  background:#5CB3FF;
+}
+.rolodex-wrap{
+  padding:150rpx 30rpx 0;
+
+}
+.person-item {
+  width: 688rpx;
+  padding: 24rpx;
+  /* margin-bottom: 24rpx; */
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 1);
+  display: flex;
+}
+
+.person-item .img-box {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 24rpx;
+  border:1rpx solid #EBEEF5;
+}
+
+.person-item .img-box .img {
+  width: 96rpx;
+  height: 96rpx;
+  border-radius: 50%;
+}
+
+.person-item .person-info {
+  flex: 1;
+}
+
+.person-item .person-info .nick-name {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5rpx;
+}
+
+.person-item .person-info .nick-name .img {
+  width: 28rpx;
+  height: 24rpx;
+  margin-right: 16rpx;
+}
+.person-item .person-info .nick-name .text{
+   max-width:370rpx;
+}
+
+.person-item .person-info .position-name {
+  display: inline-flex;
+  padding: 0 10rpx;
+  font-size: 22rpx;
+  line-height: 1.5;
+  color: #666;
+  border-radius: 5rpx;
+  margin-bottom: 26rpx;
+  background: rgba(235, 238, 245, 1);
+}
+
+.person-item .person-follow {
+  width: 30rpx;
+  padding-left:100rpx;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.person-item .person-follow .img {
+  width: 100%;
+}
+
+/* 我的名片  */
+.my-card{
+  position: relative;
+  overflow: hidden;
+  border-top-left-radius: 8rpx;
+  border-bottom-left-radius: 8rpx;
+  border-bottom-right-radius: 8rpx;
+}
+.my-card .mark{
+  position: absolute;
+  top:-53rpx;
+  right: -53rpx;
+  width:106rpx;
+  height: 106rpx;
+  background:#97CEFF;
+  font-size:22rpx;
+  text-align: center;
+  color: #fff;
+  transform: rotate(45deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+/* 输入框 */
+
+.weui-search-bar {
+  width: 695rpx;
+  height: 80rpx;
+  margin-top: 48rpx;
+  margin-bottom: 32rpx;
+  background: rgba(235,238,245,1);
+  border-radius: 12rpx;
+  padding: 0;
+  border-width: 0;
+  overflow: hidden;
+}
+
+.weui-search-bar__form {
+  width: 584rpx;
+  height: 80rpx;
+  border-radius: 0;
+  border: none;
+  background: #EBEEF5;
+}
+
+.weui-search-bar__label {
+  line-height: 80rpx;
+  background: #EBEEF5;
+}
+
+.weui-search-bar__label .weui-icon-search {
+  vertical-align: top;
+}
+
+.weui-search-bar__label .weui-search-bar__text {
+  position: relative;
+  top: -2rpx;
+}
+
+.weui-search-bar__box {
+  height: inherit;
+  line-height: inherit;
+}
+
+.weui-icon-search_in-box {
+  top: 27rpx;
+}
+
+.weui-search-bar__input {
+  height: inherit;
+  line-height: inherit;
+}
+
+.weui-icon-clear {
+  line-height: 80rpx;
+}
+
+.weui-search-bar__cancel-btn {
+  font-size: 28rpx;
+  line-height: 80rpx;
+  margin-left: 0rpx;
+  padding-left: 15rpx;
+  margin-right: 15rpx;
+  position: relative;
+}
+
+.weui-search-bar__cancel-btn::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 20rpx;
+  bottom: 20rpx;
+  width: 1rpx;
+  border-left: 2rpx solid #ffffff;
+  color: #ffffff;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scaleX(0.5);
+  transform: scaleX(0.5);
+}
+/* 列表  */
+.inner-list{
+  margin-bottom: 48rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+.inner-list .inner-letter{
+  font-size: 32rpx;
+  color: #030303;
+  line-height: 45rpx;
+  margin-bottom: 8rpx;
+}
+.inner-list .person-item{
+  border-bottom: 1rpx solid #EFEFF4;
+}
+.inner-list .person-item:last-child{
+  border-bottom: none;
+}
+.person-total{
+  font-size: 24rpx;
+  color:#B2B2B2;
+  text-align: center;
+  padding-bottom: 26rpx;
+}

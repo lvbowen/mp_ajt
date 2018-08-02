@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#5CB3FF",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "微聘",
+  "backgroundColor": "#f1f5f8",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "login-dialog": "/components/loginDialog/loginDialog",
+    "operation": "/components/operation/operation"
+  }
+}

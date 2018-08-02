@@ -1,0 +1,119 @@
+page{
+  height: -webkit-calc(100% - 64px);
+  height: calc(100% - 64px);
+}
+.page-cash{
+  min-height: 100%;
+  padding-top:46rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  box-shadow:0rpx 2rpx 4rpx 0rpx rgba(203,203,203,0.5) inset;
+  margin-top:64px;
+}
+.cash-wrap{
+  width:686rpx;
+  margin:0 auto;
+  padding:40rpx 30rpx 70rpx;
+  box-sizing: border-box;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.08);
+  border-radius:8rpx;
+}
+.cash-amount{
+  margin-bottom: 80rpx;
+}
+.cash-amount .title{
+  margin-bottom: 22rpx;
+}
+.cash-amount .input-box{
+  display: flex;
+  height: 94rpx;
+  padding-bottom: 10rpx;
+  margin-bottom: 36rpx;
+  box-sizing: border-box;
+}
+.cash-amount .input-box .rmb{
+  font-size: 64rpx;
+  line-height: 90rpx;
+  margin-right: 24rpx;
+  color: #333;
+}
+.cash-amount .input-box .input{
+  flex:1;
+  font-size: 60rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  color: #333;
+}
+.cash-amount .tip{
+  font-size:24rpx;
+  color: #B2B2B2;
+}
+.cash-amount .tip text{
+  color: #FF566B;
+}
+
+.cash-method .title{
+  padding-bottom: 35rpx;
+}
+.cash-method .method-item{
+  display: flex;
+  align-items: center;
+  height: 98rpx;
+}
+.cash-method .method-item .img{
+   width:52rpx;
+   margin-right: 24rpx;
+}
+.cash-method .method-item .name{
+  flex:1;
+  font-size:34rpx;
+  color: #666;
+}
+.cash-method .method-item .icon{
+  margin-right: 8rpx;
+}
+.cash-method .input-box{
+  width:618rpx;
+  height:112rpx;
+  border-radius:10rpx;
+  border:2rpx solid rgba(92,179,255,1);
+  margin:24rpx auto 32rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cash-method .input-box .input{
+   height: 70rpx;
+   line-height: 70rpx;
+   color: #333;
+   font-size: 36rpx;
+   text-align: center;
+}
+.cash-method .input-box .alipay-placeholder{
+   color: #B2B2B2;
+   font-size: 36rpx;
+   text-align: center;
+}
+.cash-method .tip{
+  padding-left:15rpx;
+  padding-right: 15rpx;
+  font-size: 24rpx;
+  color: #B2B2B2;
+  text-align: center;
+  margin-top: 24rpx;
+  margin-bottom: 116rpx;
+}
+.cash-method .tip.reduce-margin{
+  margin-top: 0;
+  margin-bottom: 46rpx;
+}
+.cash-submit button{
+  height: 112rpx;
+  margin-bottom: 45rpx;
+}
+.cash-record{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,36 @@
+
+.bg-img{
+  width:100%;
+  vertical-align: top;
+}
+.page-vip{
+  position: relative;
+}
+.btn-wrap{
+  position: absolute;
+  bottom:70rpx;
+  left:129rpx;
+  width: 464rpx;
+}
+.btn-wrap .btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36rpx;
+  width:100%;
+  height:112rpx;
+  border-radius:56rpx;
+  letter-spacing: 4rpx;
+} 
+.btn-wrap form{
+   display: block;
+}
+.btn-wrap .form2 .btn{
+  color: #fff;
+  background:rgba(255,255,255,0.2);
+}
+.btn-wrap .form2 .btn image{
+   width:40rpx;
+   height:36rpx;
+   margin-right: 24rpx;
+}

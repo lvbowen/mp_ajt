@@ -1,0 +1,36 @@
+
+page{
+  height:-webkit-calc(100% - 64px);
+  height:calc(100% - 64px);
+}
+#map{
+  width:100%;
+  height: 100%;
+  margin-top:64px;
+}
+.cover-wrap{
+  position: fixed;
+  left:30rpx;
+  bottom:34rpx;
+  width: 690rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+  background: #ffffff;
+  box-sizing: border-box;
+  padding:30rpx;
+}
+.cover-wrap .name{
+  font-size:34rpx;
+  line-height: 48rpx;
+}
+.cover-wrap .item{
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cover-wrap .item .fa{
+  width:24rpx;
+  height:24rpx;
+  margin-right:16rpx;
+}

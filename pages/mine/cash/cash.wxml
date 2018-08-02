@@ -1,0 +1,42 @@
+<view class="page-cash">
+  <header title="提现" position="fixed" showBack="1" ></header>
+  <view class="cash-wrap">
+   <!-- 提现金额  -->
+    <view class="cash-amount">
+       <view class="title font-28 color_666666">提现金额（元）</view>
+       <view class="input-box border_bottom">
+        <text class="rmb">￥</text>
+        <input class="input" type='digit' value="{{cashMoney}}" onblur="blurAmount"></input>
+       </view>
+       <view class="tip">当前余额：<text>￥{{balance}}</text>，攒够30元可以提现，手续费1%</view>
+    </view>
+    <!-- 提现方式  -->
+    <view class="cash-method">
+      <view class="title font-28 color_666666 border_bottom">提现方式</view>
+      <view class="methods">
+        <view class="method-item wechat border_bottom" catchtap='selectMethod' data-method="1">
+           <image class="img" src="/images/pay-wechat.png" mode='widthFix'></image>
+           <text class="name">微信</text>
+           <icon class="icon" type="success" size="19" color="{{payMethod === 'wechat' ? '#5CB3FF' : '#C9C9C9'}}"></icon>
+        </view>
+        <view class="method-item alipay border_bottom" catchtap='selectMethod' data-method="2">
+           <image class="img" src="/images/pay-ali.png" mode='widthFix'></image>
+           <text class="name">支付宝</text>
+           <icon class="icon" type="success" size="19" color="{{payMethod === 'alipay' ? '#5CB3FF' : '#C9C9C9'}}"></icon>
+        </view>
+      </view>
+      <view class="input-box" wx:if="{{payMethod == 'alipay'}}">
+        <input class="input" placeholder='请输入支付宝账号' placeholder-class='alipay-placeholder' bindblur="blurAlipay"></input>
+      </view>
+      <view class="tip {{payMethod === 'alipay' ? 'reduce-margin' : ''}}">申请的提现会直接打款到您的微信钱包或支付宝，请注意查看通知 提现到账时间为1～3个工作日之内</view>
+    </view>
+    <!-- 其他  -->
+    <view class="cash-submit">
+      <button class="btn-blue" catchtap='submitCash'>完成</button>
+    </view>
+    <view class="cash-record" catchtap='linkTo'>
+      <text class="record font-28 color_5CB3FF" data-url='1'>提现记录</text>
+      <text class="record font-28 color_5CB3FF" data-url='2'>资金记录</text>
+    </view>
+  </view>
+</view>

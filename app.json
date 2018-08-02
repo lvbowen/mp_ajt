@@ -3,6 +3,7 @@
     "pages/card/index/index",
     "pages/card/myCard/myCard",
     "pages/card/shareCard/shareCard",
+    "pages/square/index/index",
     "pages/micro/index/index",
     "pages/micro/editBaseInfo/editBaseInfo",
     "pages/micro/searchAddress/searchAddress",
@@ -18,6 +19,7 @@
     "pages/mine/cash/cash",
     "pages/mine/memberPrivileges/memberPrivileges",
     "pages/mine/buy/buy",
+    "pages/mine/rolodex/rolodex",
     "pages/home/newHome/newHome",
     "pages/home/map/map",
     "pages/upload/upload"
@@ -46,6 +48,12 @@
                 "text": "微官网",
                 "iconPath": "/images/tabbar-micro.png",  
                 "selectedIconPath": "/images/selected-tabbar-micro.png"
+            },
+            {
+              "pagePath": "pages/square/index/index",
+              "text": "人脉广场",
+              "iconPath": "/images/tabbar-square.png",
+              "selectedIconPath": "/images/selected-tabbar-square.png"
             },
             {
                 "pagePath": "pages/mine/index/index",

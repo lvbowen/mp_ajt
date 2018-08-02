@@ -1,0 +1,115 @@
+<view class="page-mine">
+  <header position="fixed"></header>
+<!-- 基本信息  -->
+  <view class="base-info">
+    <view class="img-box">
+      <image class="img" src="{{personnalInfo.headImgUrl}}" mode="widthFix" wx:if="{{personnalInfo.headImgUrl}}"></image>
+      <image class="img" src="/images/default-portrait.jpg" mode="widthFix" wx:else></image>
+    </view>
+    <view class="info-content">
+      <view class="nick-member">
+          <view class="nick font-34 color_333333 ell">{{personnalInfo.nickName || '这是昵称'}}</view>  
+        <view class="member font-28 color_5CB3FF" catchtap='linkTo' data-url="1">
+          <block wx:if="{{vipType == 0}}">
+            <image class="img" src="/images/icon-not-member.png"></image>
+            <text class="text">点亮会员</text>
+          </block>
+           <block wx:elif="{{vipType == 1}}">
+            <image class="img" src="/images/icon-vip-member.png"></image>
+            <text class="text">升级为创客</text>
+          </block>
+           <block wx:else>
+            <image class="img" src="/images/icon-maker-member.png"></image>
+            <text class="text">我是创客</text>
+          </block>
+        </view>
+      </view>
+       <view class="position font-28 color_B2B2B2" wx:if="{{personnalInfo.companyName || personnalInfo.position}}">{{personnalInfo.companyName || ''}} <text style="margin-left:16rpx;">{{personnalInfo.position || ''}}</text></view> 
+      <!-- <view class="company font-28 color_B2B2B2"></view> -->
+      <view class="like-visitor color_B2B2B2">
+         <view class="like">受喜欢<text>{{personnalInfo.beLikedCount || '0'}}</text></view>
+         <view class="visitor">访问量<text>{{personnalInfo.visitCount || '0'}}</text></view>
+      </view>
+    </view>
+  </view>
+  <!-- 奖励金 -->
+  <view class="reward-gold">
+    <view class="img-box">
+      <image class="img" src="/images/icon-money.png" mode="widthFix"></image>
+    </view>
+    <view class="gold-wrap" catchtap='linkTo' data-url="2">
+      <view class="gold-hd font-28">我的奖励金</view>
+      <view class="gold-bd">
+        <text class="gold-money font-32 color_333333">{{personnalInfo.totalRewardMoney || '0.00'}}</text>
+        <text class="gold-cash font-24 color_5CB3FF">提现</text>
+      </view>
+    </view>
+  </view>
+  <!-- 垂直导航区  -->
+  <view class="nav-wrap">
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav01.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="3">
+          <text class="nav-item__title">编辑名片</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav02.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="4">
+          <text class="nav-item__title">访客记录</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav06.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="8">
+          <text class="nav-item__title">名片夹</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav03.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="5">
+          <text class="nav-item__title">会员特权</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav04.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="6">
+          <text class="nav-item__title">{{vipType == 2 ? '我是创客' : '成为创客'}}</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+    <view class="nav-item">
+      <view class="nav-item__hd">
+        <image class="img" src="/images/mine-nav05.png"></image>
+      </view>
+      <view class="nav-item__bd border_bottom" catchtap='linkTo' data-url="7">
+          <text class="nav-item__title">关于我们</text>
+          <text class="arrow-right"></text>
+      </view>
+    </view>
+  </view>
+  <!-- 推荐给朋友  -->
+  <view class="btn-wrap">
+    <button class="btn-blue" open-type='share'>推荐给朋友</button>
+  </view>
+  <!-- 客服  -->
+  <form class="form" report-submit="true" bindsubmit="saveFormId">
+    <button class="btn-contact" open-type='contact' session-from="weapp" form-type="submit">
+      <image class="img" src="/images/icon-contact.png"></image>
+    </button>
+  </form>
+</view>

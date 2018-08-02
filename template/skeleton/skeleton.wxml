@@ -1,0 +1,36 @@
+ <template name="skeleton">
+   <view class="timeline-item" wx:if="{{skeleton == 1}}">
+    <view class="animated-background1"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background1"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background1"></view>
+    <view class="animated-background3"></view>
+  </view>
+  <view class="timeline-item" wx:if="{{skeleton == 2}}">
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background">
+      <view class="background-masker header-top"></view>
+      <view class="background-masker header-left"></view>
+      <view class="background-masker header-right"></view>
+      <view class="background-masker header-bottom"></view>
+      <view class="background-masker subheader-left"></view>
+      <view class="background-masker subheader-right"></view>
+      <view class="background-masker subheader-bottom"></view> 
+    </view>
+    <view class="animated-background1"></view>
+    <view class="animated-background3"></view>
+    <view class="animated-background1"></view>
+    <view class="animated-background2"></view>
+    <view class="animated-background2"></view>
+  </view> 
+</template>

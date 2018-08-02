@@ -173,7 +173,7 @@ page {
 
 /* 边框 */
 
-.border_top, .border_bottom {
+.border_top, .border_bottom, .border_left, .border_right {
     position: relative;
 }
 
@@ -205,6 +205,36 @@ page {
     transform-origin: 0 0;
     -webkit-transform: scaleY(0.5);
     transform: scaleY(0.5);
+}
+
+.border_left::before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 1rpx;
+    border-left: 1rpx solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+
+.border_right::before {
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 1rpx;
+    border-left: 1rpx solid #e5e5e5;
+    color: #e5e5e5;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
 }
 
 /* 按钮  */

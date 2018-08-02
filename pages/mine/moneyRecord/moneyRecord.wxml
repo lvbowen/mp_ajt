@@ -1,0 +1,23 @@
+<header title="资金记录" position="fixed" showBack="1" ></header>
+<scroll-view class="scroll-view {{noData}}" scroll-y style="height: {{scrollHeight}}px;">
+  <view class="record-item" wx:for="{{moneyRecords}}" wx:key="id">
+    <view class="record-hd">
+       <image src="{{item.headImg}}" mode="widthFix" wx:if="{{item.headImg}}"></image> 
+       <image src="/images/default-portrait.jpg" mode="widthFix" wx:else></image>
+    </view>
+    <view class="record-bd">
+      <view class="top">
+        <text class="title font-28 color_333333">{{item.buyTitle || ''}}</text>
+        <text class="money">￥{{item.rewardMoney}}</text>
+      </view>
+      <view class="bottom font-28 color_B2B2B2">{{item.buyTime}}</view>
+    </view>
+  </view>
+  <view class="no-data" wx:if="{{noData}}">
+    <image src="/images/no-result.png" mode='widthFix'></image>没有资金记录
+  </view>
+  <!-- <view class="loading" hidden='{{!loading}}'>
+      <text class='fa fa-spinner fa-spin fa-3x fa-fw'></text>
+      <text>加载更多</text>
+    </view> -->
+</scroll-view>

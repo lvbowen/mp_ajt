@@ -1,0 +1,19 @@
+<view class="page-search-address">
+  <header title="公司地址" showBack="1" position='fixed'></header>
+  <view class="page-header">
+    <view class="city"><text class="city-name">{{currentCity.city}}</text><text class="fa fa-caret-down"></text></view>
+    <view class="input-box"><input class="input" placeholder='输入地址' placeholder-style='color:#B2B2B2;font-size:28rpx;'  bindinput='getTips' value="{{keywords}}"></input></view>
+  </view>
+  <scroll-view class="page-body" scroll-y hidden='{{!openLocation}}' style="height:{{pdHeight}}rpx;">
+      <view class="company-item" wx:for="{{tips}}" wx:key="{{id}}" catchtap='selectAddress' data-item="{{item}}">
+         <view class="company-name">{{item.name}}</view>
+         <view class="company-address">{{item.district}}{{item.address}}</view>
+         <view class="arrow-right"></view>
+      </view>
+  </scroll-view>
+  <view class="no-location" hidden='{{openLocation}}'>
+    <image class="img" src="/images/no-address.png"></image>
+    <text class="text1">搜索不到地址</text>
+    <text class="text2" catchtap='openLocationSetting'>您还没开启定位，去设置</text>
+  </view>
+</view>

@@ -1,0 +1,135 @@
+/* @import "/style/editResume.wxss";
+@import "/style/ali-font.wxss"; */
+
+.page-edit-company{
+  margin-top:104px;
+}
+.edit-company-wrap{
+  width:686rpx;
+  margin:40rpx auto;
+  background:rgba(255,255,255,1);
+  box-shadow:0rpx 2rpx 10rpx 0rpx rgba(0,0,0,0.08);
+  border-radius:8rpx;
+  padding:32rpx 32rpx 44rpx;
+  box-sizing: border-box;
+}
+.placeholder{
+  color:#B2B2B2;
+  font-size: 32rpx;
+}
+.company-logo{
+  display:flex;
+  justify-content: center;
+  margin-bottom:40rpx;
+  position:relative;
+}
+.company-logo .img-logo{
+  width:180rpx;
+  height: 180rpx;
+  border-radius: 50%;
+}
+.company-logo .icon-edit{
+  position:absolute;
+  top:0rpx;
+  right:216rpx;
+  width:32rpx;
+  height:32rpx;
+}
+.section{
+  margin-bottom:32rpx;
+}
+.sec-head{
+  color: #666;
+  margin-bottom: 12rpx;
+  line-height: 34rpx;
+  font-size:24rpx;
+}
+.sec-body{
+  border-bottom: 1rpx solid #e5e5e5;
+}
+.sec-body input{
+  line-height: 45rpx;
+  margin-bottom: 18rpx;
+  font-size: 32rpx;
+}
+.company-name{
+  position: relative;
+}
+.company-name .company-list{
+   position: absolute;
+   top:100%;
+   left:0;
+   z-index: 999;
+   background: #fff;
+   width: 100%;
+   height: 1220rpx;  
+   overflow-y: scroll;
+   /* border-left:1rpx solid #e5e5e5;
+   border-right:1rpx solid #e5e5e5; */  
+   /* border-bottom:1rpx solid #e5e5e5; */
+}
+.company-name .company-item{
+  line-height: 80rpx;
+  font-size:30rpx;
+  color: #333;
+  border-bottom:1rpx solid #e5e5e5;
+
+} 
+.company-name .company-item:last-child{
+  border-bottom:none;
+}
+.company-intro .sec-head .length{
+  float: right;
+}
+.company-intro .sec-body{
+  width:620rpx;
+  height: 268rpx;
+  padding:20rpx 26rpx;
+  border-radius: 8rpx;
+  border:1rpx solid #e5e5e5;
+  box-sizing: border-box;
+  
+}
+.company-intro .sec-body .textarea{
+  width:568rpx;
+  font-size:32rpx;
+  height: 228rpx;
+  overflow-y: scroll;
+}
+.picker-component{
+  position: relative;
+  line-height: 45rpx;
+  margin-bottom:18rpx;
+}
+.picker-component .picker,.company-address .picker{
+   height: 45rpx;
+   line-height: 45rpx;
+   font-size:32rpx;
+}
+.picker-component .arrow-right{
+   position: absolute;
+   right:4rpx;
+   top:0rpx;
+}
+.company-address .sec-body{
+  position:relative;
+}
+.company-address .picker{
+  width:100%;
+  margin-bottom: 18rpx;
+}
+.company-address .sec-body .arrow-right{
+    position: absolute;
+   right:0;
+   top:4rpx;
+}
+.save-btn{
+  width:622rpx;
+  height: 112rpx;
+  color: #fff;
+}
+.add-margin{
+  /* margin-bottom: 500rpx; */
+  padding-bottom: 500rpx;
+  /* background: red; */
+}

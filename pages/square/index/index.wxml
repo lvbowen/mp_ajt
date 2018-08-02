@@ -1,0 +1,51 @@
+
+<view class="page-square">
+ <!-- banner区域 -->
+  <view class="banner-box">
+    <image class="img" src="https://aijuhr.com/images/xcx/ajt_square-banner2.jpg" mode="widthFix"></image>
+     <view class="weui-search-bar">
+          <view class="weui-search-bar__form">
+              <view class="weui-search-bar__box">
+                  <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+                  <input type="text" class="weui-search-bar__input" placeholder="搜索关键词" value="{{inputVal}}" focus='{{inputShowed}}' bindinput="inputTyping"  bindconfirm="confirmSearch" />
+                  <view class="weui-icon-clear" wx:if="{{inputShowed}}" catchtap="hideInput">
+                      <icon type="clear" size="14"></icon>
+                  </view>
+              </view>
+              <label class="weui-search-bar__label" wx:if="{{!inputShowed}}" catchtap="showInput">
+                  <icon class="weui-icon-search" type="search" size="14" color='#929292'></icon>
+                  <view class="weui-search-bar__text">搜索关键词</view>
+              </label>
+          </view>
+          <!-- <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>  -->
+      </view>
+  </view>
+  <!-- 列表  -->
+  <view class="person-list" wx:if="{{!noData}}">
+    <view class="person-item" catchtap='linkTo'  wx:for="{{nameCardList}}" wx:key="id"  data-json='{"fansId":{{item.ajtFansId}}, "cardId":{{item.id}}}'>
+      <!-- <button class="remove-button-default-style person-item" form-type='submit'> -->
+        <view class="img-box">
+          <image class="img" src="{{item.headImgUrl}}" binderror="binderror" data-index="{{index}}" wx:if="{{item.headImgUrl}}"></image>
+          <image class="img" src="{{defaultAvatar}}" wx:else></image>
+        </view>
+        <view class="person-info">
+          <view class="nick-name font-32 color_333333">       
+              <image class="img" src="/images/icon-vip-member.png" wx:if="{{item.vipType == 1}}"></image>
+              <image class="img" src="/images/icon-maker-member.png" wx:elif="{{item.vipType == 2}}"></image>
+              <text class="text">{{item.nickName}}</text>
+          </view>
+          <view class="position-name">{{item.position}}</view>
+          <view class="company-name font-24 color_B2B2B2">{{item.companyName}}</view>
+        </view>
+        <view class="person-follow" catchtap='collect' data-iscancel="{{item.isCancel}}" data-otherfansid="{{item.ajtFansId}}" data-index="{{index}}">
+          <image class="img" src="/images/icon-follow.png" mode="widthFix" wx:if="{{item.isCancel == 0}}"></image> 
+          <image class="img" src="/images/selected-icon-follow.png" mode="widthFix" wx:elif="{{item.isCancel == 1}}"></image>
+        </view>
+      <!-- </button> -->
+    </view>
+  </view>
+  <view class="no-data" wx:if="{{noData}}">
+    <image src="/images/no-result.png" mode='widthFix'></image>没有人脉数据
+  </view>
+   <!-- <view class="no-data" wx:if="{{hasMarket == 0}}">您还不是会员，暂无权限浏览人脉数据</view>  -->
+</view>

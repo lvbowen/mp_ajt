@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor": "#5CB3FF",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "企业详情",
+  "backgroundColor": "#f1f5f8",
+  "backgroundTextStyle": "light",
+  "usingComponents": {
+    "header": "/components/header/header",
+    "tabbar": "/components/tabbar/tabbar"
+  }
+}

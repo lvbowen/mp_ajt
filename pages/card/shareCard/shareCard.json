@@ -1,0 +1,9 @@
+{
+    "usingComponents": {
+        "operation": "/components/operation/operation",
+        "header": "/components/header/header",
+        "tabbar": "/components/tabbar/tabbar"
+    },
+    "navigationBarTextStyle": "white",
+    "disableScroll": true
+}

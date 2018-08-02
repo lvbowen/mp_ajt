@@ -1,0 +1,74 @@
+
+<view class="page-privilege">
+  <header title="会员特权" position="fixed" showBack="1" ></header>    
+  <view class="privilege-aside">
+    <view class="privilege-title font-28 color_666666">更多<image src="/images/icon-member.png" mode="widthFix"></image> 会员</view>
+    <view class="privilege-title2 font-34">更多超值</view>
+    <image class="img" src="https://aijuhr.com/images/xcx/ajt_vip.png" mode="widthFix"></image>
+    <view class="vip-maker" >
+      <view class="vip-box box" catchtap='goBuy' data-pid="1">
+        <image class="img" src="/images/pl-vip02.png" mode="widthFix"></image>
+        <text class="text font-28">成为VIP</text>
+      </view>
+      <view class="maker-box box" catchtap='goBuy' data-pid="2">
+        <image class="img" src="/images/pl-maker02.png" mode="widthFix"></image>
+        <text class="text font-28">成为创客</text>
+      </view>
+    </view>
+  </view>
+  <!-- 表格  -->
+  <view class="privilege-table-wrap">
+    <view class="privilege-table">
+        <view class="tr">
+          <view class="td"></view>
+          <view class="td">VIP会员</view>
+          <view class="td">创客</view>
+        </view>
+        <view class="tr">
+          <view class="td">电子名片</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">微官网</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">专属客服</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">模板消息</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">会员专属徽章</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">名片市集</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr">
+          <view class="td">访问数据</view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+          <view class="td"><icon type="success_no_circle" size='16' color='#DBB272'></icon></view>
+        </view>
+        <view class="tr gfl">
+          <view class="td">高返利</view>
+          <view class="td info">VIP会员推荐用户 购买可获得30% 高额返利</view>
+          <view class="td info">创客推荐用户 购买可获得45% 高额返利</view>
+        </view>
+        <view class="tr ewjl">
+          <view class="td">额外奖励</view>
+          <view class="td">×</view>
+          <view class="td info">创客所推荐会员 再次推荐其他人 成为会员获得15% 奖励</view>
+        </view>
+   </view>
+  </view>
+</view>
